@@ -1,0 +1,29 @@
+
+<%- include("./partials/nav.ejs")%>
+<body>
+<div class="detail"></div>
+    <h2><%=blogs.title%></h2>
+<div class="detbod">
+    <p><%=blogs.body %></p>
+    
+
+</div>
+<div>
+    <a class="details" data-doc="<%= blogs._id%>">Delete</a>
+
+</div>
+<script>
+    const trashcan = document.querySelector("a.details")
+    trashcan.addEventListener("click",(e)=>{
+        const endpoint =`/blogs/${trashcan.dataset.doc}`;
+        fetch(endpoint,{
+            method : "DELETE"
+        })
+        .then((response)=>response.json())
+        .then((data)=> window.location.href=data.redirect)
+        .catch((err) => {
+            console.log(err)
+        })
+    })
+</script>
+</body>

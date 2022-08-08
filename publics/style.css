@@ -1,0 +1,15 @@
+
+#nav{
+    text-align: right;
+    font-size: medium;
+}
+h1{
+    color:darkgreen;
+text-align: center;
+
+
+}
+.container{
+    display:flex;
+    flex-direction: column;
+}
