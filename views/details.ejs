@@ -9,11 +9,11 @@
 
 </div>
 <div>
-    <a class="details" data-doc="<%= blogs._id%>">Delete</a>
+   <a class="delete" data-doc="<%= blogs._id%>">Delete</a>
 
 </div>
 <script>
-    const trashcan = document.querySelector("a.details")
+    const trashcan = document.querySelector("a.delete")
     trashcan.addEventListener("click",(e)=>{
         const endpoint =`/blogs/${trashcan.dataset.doc}`;
         fetch(endpoint,{

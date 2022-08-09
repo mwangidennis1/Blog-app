@@ -9,14 +9,14 @@ mongoose.connect(mongourl)
    .catch((err)=>{console.log("access denied")})
 app.use(express.static("publics"))
 app.use(express.urlencoded({extended : true}))
-app.use((req,res,next)=>{
+/*app.use((req,res,next)=>{
    console.log("host:",req.hostname);
    console.log("method:",req.method)
    next();
-})
+})*/
 app.set("view engine", "ejs")
 
-app.get("/" , (req,res)=> {
+app.get("/blog" , (req,res)=> {
    Blog.find()
    .then((result)=>{
       res.render("index",{blogs : result})
@@ -47,7 +47,6 @@ app.post("/index" ,(req,res) =>{
       res.redirect("/") 
    })
 })
-
 app.get("/about" , (req,res)=> {
     res.render("about") 
  })

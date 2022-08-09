@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <link rel="stylesheet" href="/style.css">
 <head>
-
+    <link rel="icon" type="image/svg+xml" href="https://example.com/image.svg">
     <h1>"Okay I have something to say"</h1>
     <%- include("./partials/nav.ejs")%>     
    
 </head>
-<div>
-    <h1>All Blogs</h1>
+<h1>All Blogs</h1>
+<div id="blog">
     <% if(blogs.length > 0){%>
         <% blogs.forEach(blog => {%>
             <a class="red" href="./<%= blog._id %>">

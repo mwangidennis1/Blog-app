@@ -1,7 +1,16 @@
 
 #nav{
     text-align: right;
-    font-size: medium;
+    font-size: 40px;
+    background-color: dimgray;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+
+}
+#blog{
+    display: grid;
+    flex-direction: row;
+    align-items: center;
 }
 h1{
     color:darkgreen;
@@ -12,4 +21,7 @@ text-align: center;
 .container{
     display:flex;
     flex-direction: column;
+}
+.delete:hover{
+    cursor:pointer;
 }
