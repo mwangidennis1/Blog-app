@@ -16,7 +16,11 @@ app.use(express.urlencoded({extended : true}))
 })*/
 app.set("view engine", "ejs")
 
-app.get("/blog" , (req,res)=> {
+app.get("/" , (req,res)=> {
+   res.redirect("/blogs")
+}) 
+// blog routes
+app.get("/blogs", (req,res) =>{
    Blog.find()
    .then((result)=>{
       res.render("index",{blogs : result})
@@ -24,9 +28,11 @@ app.get("/blog" , (req,res)=> {
    .catch((err) =>{
       console.log(err)
    })
+
 })
-app.get("/:id",(req,res)=>{
-   const id = req.params.id
+app.get("/blogs/:id",(req,res)=>{
+   const id = req.params.id;
+   console.log(id)
    Blog.findById(id)
    .then((result)=>{
       res.render("details",{blogs : result})

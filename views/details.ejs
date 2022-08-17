@@ -12,7 +12,9 @@
    <a class="delete" data-doc="<%= blogs._id%>">Delete</a>
 
 </div>
+
 <script>
+    /*
     const trashcan = document.querySelector("a.delete")
     trashcan.addEventListener("click",(e)=>{
         const endpoint =`/blogs/${trashcan.dataset.doc}`;
@@ -24,6 +26,11 @@
         .catch((err) => {
             console.log(err)
         })
-    })
+    })*/
 </script>
+
 </body>
+<footer>
+    <%- include("./partials/footer.ejs")%>     
+
+</footer>

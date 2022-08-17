@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <link rel="stylesheet" href="/style.css">
 <head>
+    <title>blogup</title>
     <link rel="icon" type="image/svg+xml" href="https://example.com/image.svg">
     <h1>"Okay I have something to say"</h1>
     <%- include("./partials/nav.ejs")%>     
-   
 </head>
+<body>
 <h1>All Blogs</h1>
 <div id="blog">
     <% if(blogs.length > 0){%>
         <% blogs.forEach(blog => {%>
-            <a class="red" href="./<%= blog._id %>">
+            <a class="red" href="/blogs/<%= blog._id %>">
             <h2 class="tit"><%=blog.title%></h2>
             <p class="para"><%=blog.snippet%></p>
         </a>
@@ -18,3 +19,9 @@
    <% }%>
 
 </div>
+</body>
+
+
+<footer>
+    <%- include("./partials/footer.ejs")%> 
+</footer>
