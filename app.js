@@ -9,11 +9,7 @@ mongoose.connect(mongourl)
    .catch((err)=>{console.log("access denied")})
 app.use(express.static("publics"))
 app.use(express.urlencoded({extended : true}))
-/*app.use((req,res,next)=>{
-   console.log("host:",req.hostname);
-   console.log("method:",req.method)
-   next();
-})*/
+
 app.set("view engine", "ejs")
 
 app.get("/" , (req,res)=> {
@@ -41,11 +37,15 @@ app.get("/blogs/:id",(req,res)=>{
       console.log(err)
    })
 })
-app.delete("/:id",(req,res)=>{
+app.delete("/blogs/:id",(req,res)=>{
    const id = req.params.id
    Blog.findByIdAndDelete(id)
-   .then((result) => {res.json({redirect : "/"})})
-})
+   .then(result =>
+       {res.json({redirect : "/blogs"})})
+   })
+   /*.catch(err=>{
+   console.log(err)
+})*/
 app.post("/index" ,(req,res) =>{
    const blog = new Blog(req.body)
    blog.save()

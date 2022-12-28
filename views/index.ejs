@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>All Blogs</h1>
-<div id="blog">
+<div id="card">
     <% if(blogs.length > 0){%>
         <% blogs.forEach(blog => {%>
             <a class="red" href="/blogs/<%= blog._id %>">
@@ -18,7 +18,7 @@
         <%})%>
    <% }%>
 
-</div>
+</div> 
 </body>
 
 
